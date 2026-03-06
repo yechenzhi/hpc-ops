@@ -82,7 +82,6 @@ target_link_directories(
 
 target_link_libraries(
   _C PRIVATE
-  cuda
   c10
   torch
   torch_cpu
@@ -94,7 +93,6 @@ target_link_libraries(
 target_compile_options(
   _C PRIVATE
   $<$<COMPILE_LANGUAGE:CUDA>:
-    -Werror=all-warnings
     -lineinfo
     --expt-relaxed-constexpr
     -std=c++17
